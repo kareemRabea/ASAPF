@@ -1,0 +1,10 @@
+[
+  {
+    "title":"Person",
+    "route":"/person"
+  },
+  {
+    "title":"Address",
+    "route":"/address"
+  }
+]

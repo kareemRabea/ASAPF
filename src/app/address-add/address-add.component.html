@@ -1,0 +1,61 @@
+
+
+<div class="col-lg-6 m-auto">
+  <div class="card card-bordered h-100">
+      <div class="card-inner">
+          <div class="card-head">
+              <h5 class="card-title">Address</h5>
+          </div>
+          <form #addressform="ngForm" (ngSubmit)="add(addressform)">
+              <div class="form-group">
+                  <label class="form-label" for="cf-full-name">Building Code </label>
+                  <input class="form-control" type="text" #buildingCode="ngModel" ngModel name="buildingCode" required>
+                  <p *ngIf="buildingCode.touched&& buildingCode.errors?.required" class=" text-danger">
+                    Building Code Required
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-full-name">Street</label>
+                <input class="form-control" type="text" #street="ngModel" ngModel name="street" required>
+                <p *ngIf="street.touched&& street.errors?.required" class=" text-danger">
+                  Street Required
+              </p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-full-name">City</label>
+              <input class="form-control" type="text" #city="ngModel" ngModel name="city" required>
+              <p *ngIf="city.touched&& city.errors?.required" class=" text-danger">
+                City Required
+            </p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-full-name">Country</label>
+            <input class="form-control" type="text" #country="ngModel" ngModel name="country" required>
+            <p *ngIf="country.touched&& country.errors?.required" class=" text-danger">
+              Country Required
+          </p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-full-name">ZipCode</label>
+          <input class="form-control" type="number" #zipCode="ngModel" ngModel name="zipCode" required>
+          <p *ngIf="zipCode.touched&& zipCode.errors?.required" class=" text-danger">
+            ZipCode Required
+        </p>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cf-full-name">Person</label>
+        <select #person="ngModel"  ngModel name="person" required class=" form-control">
+          <option *ngFor="let item of personlist" [value]="item">{{item.fullName}}</option>
+        </select>
+
+        <p *ngIf="person.touched&& person.errors?.required" class=" text-danger">
+          Person Required
+      </p>
+    </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-lg btn-primary">Save</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

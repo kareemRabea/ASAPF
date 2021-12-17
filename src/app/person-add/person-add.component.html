@@ -1,0 +1,30 @@
+
+
+<div class="col-lg-6 m-auto">
+  <div class="card card-bordered h-100">
+      <div class="card-inner">
+          <div class="card-head">
+              <h5 class="card-title">Person</h5>
+          </div>
+          <form #personform="ngForm" (ngSubmit)="add(personform)">
+              <div class="form-group">
+                  <label class="form-label" for="cf-full-name">First Name</label>
+                  <input class="form-control" type="text" #firstName="ngModel" ngModel name="firstName" required>
+                  <p *ngIf="firstName.touched&& firstName.errors?.required" class=" text-danger">
+                    first Name Required
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-full-name">Last Name</label>
+                <input class="form-control" type="text" #lastName="ngModel" ngModel name="lastName" required>
+                <p *ngIf="lastName.touched&& lastName.errors?.required" class=" text-danger">
+                  last Name Required
+              </p>
+            </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-lg btn-primary">Save</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
